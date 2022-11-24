@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="jquery.glanceyear.js"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="glanceyear.css">
+	<style>
+		#debug {color: #000; font-weight: bold;}
+	</style>
+	<title>Cheer Jia Piroonsith</title>
+</head>
+
+<body>
+  <div class="glanceyear-container" style="margin-top:150px;">
+    <h1 class="glanceyear-header">My 1,000 days commitments<span class="glanceyear-quantity"></span></h1>
+		<div class="glanceyear-content" id="js-glanceyear"></div>
+
+		<div class="glanceyear-summary">
+      <div class="glanceyear-legend">
+				Less&nbsp;
+				<span style="background-color: #eee"></span>
+				<span style="background-color: #c3dbda"></span>
+				<span style="background-color: #5caeaa"></span>
+				<span style="background-color: #277672"></span>
+				&nbsp;More
+			</div>
+			Calendar with map data entered <br>
+			<span id="debug"></span>
+		</div>
+  </div>
+  <script>
+	$(function() {
+			var massive = [
+				{date: '2014-8-3', value:'1'},
+				{date: '2014-8-4', value:'2'},
+				{date: '2014-9-3', value:'3'},
+				{date: '2014-10-14', value:'2'},
+				{date: '2014-10-13', value:'8'},
+				{date: '2014-7-3', value:'1'},
+				{date: '2014-7-4', value:'2'},
+				{date: '2014-7-7', value:'3'},
+				{date: '2014-7-14', value:'2'},
+				{date: '2014-6-3', value:'1'},
+				{date: '2014-6-4', value:'2'},
+				{date: '2014-6-5', value:'3'},
+				{date: '2014-6-14', value:'2'},
+				{date: '2015-2-3', value:'1'},
+				{date: '2014-5-4', value:'2'},
+				{date: '2014-8-5', value:'3'},
+				{date: '2014-12-14', value:'2'}
+			];
+		
+			$('#js-glanceyear').glanceyear(
+				massive,
+				{
+					eventClick: function(e) { $('#debug').html('Date: '+ e.date + ', Count: ' + e.count); },
+					months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+					weeks: ['M','T','W','T','F','S', 'S'],
+				}
+
+			);
+
+	});
+	</script>
+</body>
+</html>
